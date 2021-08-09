@@ -105,15 +105,15 @@ def makeSVG(data):
     barCSS = barGen(barCount)
 
     if data == {} or data["item"] == "None" or data["item"] is None:
-        contentBar = "" #Shows/Hides the EQ bar if no song is currently playing
-        currentStatus = "Last seen playing:"
+        contentBar = "Last Seen Playing" #Shows/Hides the EQ bar if no song is currently playing
+        currentStatus = ""
         recentPlays = recentlyPlayed()
         recentPlaysLength = len(recentPlays["items"])
         itemIndex = random.randint(0, recentPlaysLength - 1)
         item = recentPlays["items"][itemIndex]["track"]
     else:
         item = data["item"]
-        currentStatus = "Diva Listening to:"
+        currentStatus = "Currently Listening to:"
     
     if item["album"]["images"] == []:
         image = PLACEHOLDER_IMAGE
